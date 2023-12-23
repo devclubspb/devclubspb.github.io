@@ -23,6 +23,8 @@ jobs:
         working-directory: ./devclubspb
         run: |
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          git config user.name 'Grig Alex'
+          git config user.email 'alexengrigdev@gmail.com'
           npm install
           npm run deploy -- -m "Deploy React app to GitHub Pages"
         env:
