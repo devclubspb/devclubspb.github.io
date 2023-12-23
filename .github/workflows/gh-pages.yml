@@ -20,6 +20,7 @@ jobs:
           node-version: '20.9.0'
 
       - name: Deploy
+        working-directory: ./devclubspb
         run: |
           npm run deploy -- -u "github-actions-bot <support+actions@github.com>" -m "Deploy React app to GitHub Pages"
         env:
