@@ -22,6 +22,7 @@ jobs:
       - name: Deploy
         working-directory: ./devclubspb
         run: |
+          npm install
           npm run deploy -- -u "github-actions-bot <support+actions@github.com>" -m "Deploy React app to GitHub Pages"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
