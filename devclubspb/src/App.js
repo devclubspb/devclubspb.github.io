@@ -1,9 +1,13 @@
+import conf from './conferences/2023-12.json'
+import Conference from './Conference'
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        devclubspb
+    <div>
+      <header>
+        <h1>Клуб разработчиков</h1>
       </header>
+      <Conference value={conf} />
     </div>
   )
 }
