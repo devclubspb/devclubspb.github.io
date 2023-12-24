@@ -14,21 +14,17 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set git
-        run: |
-          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-          git config user.name "Grig Alex"
-          git config user.email alexengrigdev@gmail.com
-
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: '20.9.0'
 
-      - name: Deploy
+      - name: Build
         working-directory: ./devclubspb
-        run: |
-          npm install
-          npm run deploy -- -m "Deploy React app to GitHub Pages"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./devclubspb/build
