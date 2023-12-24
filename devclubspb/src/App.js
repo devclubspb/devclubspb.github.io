@@ -8,6 +8,7 @@ function App() {
         <h1>Клуб разработчиков</h1>
       </header>
       <Conference value={conf} />
+      <footer>Copyright (c) 2023 Developers club</footer>
     </div>
   )
 }
