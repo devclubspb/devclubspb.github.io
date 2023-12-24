@@ -17,8 +17,8 @@ jobs:
       - name: Set git
         run: |
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-          git config user.name github-actions
-          git config user.email github-actions@github.com
+          git config user.name "Grig Alex"
+          git config user.email alexengrigdev@gmail.com
 
       - name: Setup Node
         uses: actions/setup-node@v4
