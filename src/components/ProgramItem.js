@@ -21,15 +21,17 @@ function ProgramItem({ value: { title, description, startAt, speakerId, logoId }
     let Icon
     switch (logoId) {
       case 'lunch':
-        Icon = LocalDiningIcon
+        Icon = <LocalDiningIcon/>
         break
       case 'coffee':
-        Icon = LocalCafeIcon
+        Icon = <LocalCafeIcon/>
         break
+      default:
+        Icon = <></>
     }
     Header = (
       <PlanItem>
-        <LocalDiningIcon />
+        {Icon}
       </PlanItem>
     )
   }
